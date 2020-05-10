@@ -6,4 +6,4 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 
-ReactDOM.render(<App />, document.querySelector("body"));
+ReactDOM.render(<App />, document.querySelector("main"));

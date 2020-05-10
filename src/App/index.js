@@ -4,14 +4,14 @@ import { Left, Middle, Right, ModalMessage } from "./Components";
 function App() {
   const [showModal, setShowModal] = useState(false);
 
-  const setModal = boolean => setShowModal(boolean);
+  const setModal = (boolean) => setShowModal(boolean);
 
   return (
     <Fragment>
-      <Left showModal={showModal} setModal={}/>
+      <Left showModal={showModal} setModal={setModal} />
       <Middle />
       <Right />
-      <ModalMessage showModal={showModal} setModal={setModal}/>
+      <ModalMessage showModal={showModal} setModal={setModal} />
     </Fragment>
   );
 }
