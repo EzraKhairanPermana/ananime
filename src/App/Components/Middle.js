@@ -1,7 +1,5 @@
-import React from 'react';
-
 function Middle() {
-	return React.Fragment
+  return <></>;
 }
 
 export default Middle;

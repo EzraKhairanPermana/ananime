@@ -1,7 +1,5 @@
-import React from 'react';
-
 function Right() {
-	return React.Fragment
+  return <></>;
 }
 
 export default Right;

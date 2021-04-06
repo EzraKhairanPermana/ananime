@@ -1,7 +1,8 @@
-import React from "react";
 import { Modal, Row, Col, Image } from "react-bootstrap";
 import { wpuImg, kunoleps } from "../Util/Image";
+import { useContext } from "react";
 
+import { ModalContext } from "../Context/ModalContext";
 const { Header, Body } = Modal;
 
 const Data = [
@@ -19,9 +20,11 @@ const Data = [
   },
 ];
 
-function ModalMessage({ showModal, setModal }) {
+function ModalMessage() {
+  const { showModal, setShowModal } = useContext(ModalContext);
+
   return (
-    <Modal show={showModal} onHide={() => setModal(false)} size="sm">
+    <Modal show={showModal} onHide={() => setShowModal(false)} size="sm">
       <Header closeButton />
       <Body>
         <Row className="overflow">

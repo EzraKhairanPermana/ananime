@@ -1,14 +1,10 @@
-import React from "react";
-
 import { ImageBrand, Gendre } from "./Children/LeftChild";
 
-function Left({ showModal, setModal }) {
-  return (
-    <section className="web-left">
-      <ImageBrand />
-      <Gendre showModal={showModal} setModal={setModal} />
-    </section>
-  );
-}
+const Left = () => (
+  <section className="web-left">
+    <ImageBrand />
+    <Gendre />
+  </section>
+);
 
 export default Left;

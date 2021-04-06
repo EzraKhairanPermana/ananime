@@ -1,7 +1,7 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
+import { useContext } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 
+import { ModalContext } from "../../Context/ModalContext";
 import { wpuImg, kunoleps, ArrowRight } from "../../Util/Image";
 
 const ImbData = [
@@ -35,10 +35,8 @@ const ImageBrand = () => (
   </Row>
 );
 
-function Gendre({ showModal, setModal }) {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => setShow(showModal), [showModal]);
+function Gendre() {
+  const { showModal, setShowModal } = useContext(ModalContext);
 
   return (
     <Row className="gendre">
@@ -52,11 +50,11 @@ function Gendre({ showModal, setModal }) {
       ))}
       <Col className="col-12">
         <a
-          href="#"
+          href="/"
           className="btn-thx"
           onClick={(e) => {
             e.preventDefault();
-            setModal(!show);
+            setShowModal(!showModal);
           }}
         >
           <Image src={ArrowRight} className="img-fluid" />

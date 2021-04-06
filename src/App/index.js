@@ -1,19 +1,13 @@
-import React, { Fragment, useState } from "react";
+import Provider from "./Context/Provider";
 import { Left, Middle, Right, ModalMessage } from "./Components";
 
-function App() {
-  const [showModal, setShowModal] = useState(false);
-
-  const setModal = (boolean) => setShowModal(boolean);
-
-  return (
-    <Fragment>
-      <Left showModal={showModal} setModal={setModal} />
-      <Middle />
-      <Right />
-      <ModalMessage showModal={showModal} setModal={setModal} />
-    </Fragment>
-  );
-}
+const App = () => (
+  <Provider>
+    <Left />
+    <Middle />
+    <Right />
+    <ModalMessage />
+  </Provider>
+);
 
 export default App;
