@@ -1,4 +1,5 @@
 import { useContext, useEffect, useCallback, useState } from "react";
+import { Row, Col } from "react-bootstrap";
 import Axios from "axios";
 
 import { SearchContext } from "../Context/SearchContext";
@@ -45,11 +46,10 @@ function Right() {
         <div className="top-content">
           {upcoming.length > 0 &&
             upcoming.map((data) => (
-              <div class="row box-content">
-                <div class="col-md-4 col-4">
+              <Row className="box-content">
+                <Col md={4} className="col-4">
                   <div
-                    class="img-top cursor-right"
-                    id="detail-anime"
+                    className="img-top cursor-right"
                     key={data.mal_id}
                     style={{
                       backgroundImage: `url(${data.image_url})`,
@@ -57,22 +57,22 @@ function Right() {
                       backgroundSize: "cover",
                     }}
                   ></div>
-                </div>
-                <div class="col-md-8 col-6 subdata">
+                </Col>
+                <Col md={8} className="col-6 subdata">
                   <h3>{data.title}</h3>
-                  <div class="row">
-                    <div class="col-md-12">
+                  <Row>
+                    <Col md={12}>
                       <p>
                         {data.type}
                         <span>{data.episodes} eps</span>
                       </p>
-                    </div>
-                  </div>
+                    </Col>
+                  </Row>
                   <p>
                     Members <span>{data.members}</span>
                   </p>
-                </div>
-              </div>
+                </Col>
+              </Row>
             ))}
         </div>
       </div>

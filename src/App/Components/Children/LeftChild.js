@@ -36,7 +36,9 @@ const ImageBrand = () => (
 );
 
 function Gendre() {
-  const { showModal, setShowModal } = useContext(ModalContext);
+  const {
+    message: { showModalMessage, setShowModalMessage },
+  } = useContext(ModalContext);
 
   return (
     <Row className="gendre">
@@ -54,7 +56,7 @@ function Gendre() {
           className="btn-thx"
           onClick={(e) => {
             e.preventDefault();
-            setShowModal(!showModal);
+            setShowModalMessage(!showModalMessage);
           }}
         >
           <Image src={ArrowRight} className="img-fluid" />

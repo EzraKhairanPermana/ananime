@@ -21,10 +21,16 @@ const Data = [
 ];
 
 function ModalMessage() {
-  const { showModal, setShowModal } = useContext(ModalContext);
+  const {
+    message: { showModalMessage, setShowModalMessage },
+  } = useContext(ModalContext);
 
   return (
-    <Modal show={showModal} onHide={() => setShowModal(false)} size="sm">
+    <Modal
+      show={showModalMessage}
+      onHide={() => setShowModalMessage(false)}
+      size="sm"
+    >
       <Header closeButton />
       <Body>
         <Row className="overflow">
