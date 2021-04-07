@@ -17,7 +17,6 @@ function Right() {
   }, [setUpcoming]);
 
   useEffect(() => void fetchUpcoming(), [fetchUpcoming]);
-  console.log(upcoming);
 
   const updateValue = useCallback((e) => setSearchValue(e.target.value), [
     setSearchValue,
@@ -46,11 +45,11 @@ function Right() {
         <div className="top-content">
           {upcoming.length > 0 &&
             upcoming.map((data) => (
-              <Row className="box-content">
+              <Row className="box-content" key={data.mal_id}>
                 <Col md={4} className="col-4">
                   <div
                     className="img-top cursor-right"
-                    key={data.mal_id}
+                    data-id={data.mal_id}
                     style={{
                       backgroundImage: `url(${data.image_url})`,
                       backgroundPosition: "center",

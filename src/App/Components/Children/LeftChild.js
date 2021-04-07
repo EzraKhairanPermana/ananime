@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 
 import { ModalContext } from "../../Context/ModalContext";
+import { CurrentContext } from "../../Context/CurrentContext";
 import { wpuImg, kunoleps, ArrowRight } from "../../Util/Image";
 
 const ImbData = [
@@ -10,17 +11,6 @@ const ImbData = [
     img: wpuImg,
   },
   { href: "https://www.instagram.com/kunoleps", img: kunoleps },
-];
-
-const GenData = [
-  "Action",
-  "Adventure",
-  "Comedy",
-  "Fantasy",
-  "Game",
-  "Horror",
-  "Romance",
-  "Sports",
 ];
 
 const ImageBrand = () => (
@@ -39,15 +29,24 @@ function Gendre() {
   const {
     message: { showModalMessage, setShowModalMessage },
   } = useContext(ModalContext);
+  const {
+    GenreData,
+    current: { current, setCurrent },
+  } = useContext(CurrentContext);
 
   return (
     <Row className="gendre">
       <Col md="12">
         <h2>Top Gendre</h2>
       </Col>
-      {GenData.map((e, i) => (
+      {GenreData.map((e, i) => (
         <Col md="12" className="col-6" key={i}>
-          <span className="btn-gendre">{e}</span>
+          <span
+            className={`btn-gendre ${current === e ? "btn-gendre-active" : ""}`}
+            onClick={() => setCurrent(e)}
+          >
+            {e}
+          </span>
         </Col>
       ))}
       <Col className="col-12">
