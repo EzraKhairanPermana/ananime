@@ -11,9 +11,14 @@ function Right() {
   const fetchUpcoming = useCallback(async () => {
     const data = await Axios.get(
       "https://api.jikan.moe/v3/top/anime/1/upcoming"
-    ).then((res) => res.data.top);
+    ).then((res) => res.data.top.slice(0, 3));
 
-    setUpcoming(data.slice(0, 3));
+    const after = data.map((data) => {
+      if (data.episodes === null) return { ...data, episodes: "unknown" };
+      return data;
+    });
+
+    setUpcoming(after);
   }, [setUpcoming]);
 
   useEffect(() => void fetchUpcoming(), [fetchUpcoming]);
@@ -63,7 +68,7 @@ function Right() {
                     <Col md={12}>
                       <p>
                         {data.type}
-                        <span>{data.episodes} eps</span>
+                        <span> {data.episodes} eps</span>
                       </p>
                     </Col>
                   </Row>
