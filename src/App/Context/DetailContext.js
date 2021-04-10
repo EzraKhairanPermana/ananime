@@ -1,8 +1,8 @@
 import { createContext, useState, useMemo } from "react";
 
-export const ModalContext = createContext(false);
+export const DetailContext = createContext(false);
 
-export default function ModalProvider(props) {
+export default function DetailProvider(props) {
   const [showModal, setShowModal] = useState(false);
 
   const providerValue = useMemo(
@@ -13,5 +13,5 @@ export default function ModalProvider(props) {
     [showModal, setShowModal]
   );
 
-  return <ModalContext.Provider value={providerValue} {...props} />;
+  return <DetailContext.Provider value={providerValue} {...props} />;
 }
