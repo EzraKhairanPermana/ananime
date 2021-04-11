@@ -7,13 +7,13 @@ import DataProvider from "./DataContext";
 export default function Provider({ children }) {
   return (
     <ModalProvider>
-      <CurrentProvider>
-        <SearchProvider>
+      <DetailProvider>
+        <CurrentProvider>
           <DataProvider>
-            <DetailProvider>{children}</DetailProvider>
+            <SearchProvider>{children}</SearchProvider>
           </DataProvider>
-        </SearchProvider>
-      </CurrentProvider>
+        </CurrentProvider>
+      </DetailProvider>
     </ModalProvider>
   );
 }

@@ -12,7 +12,7 @@ function Middle() {
     SeasonData,
     current: { current, setCurrent },
   } = useContext(CurrentContext);
-  const { searchValue, setSearchValue } = useContext(SearchContext);
+  const { searchValue, setSearchValue, fireSearch } = useContext(SearchContext);
   const { loading, data } = useContext(DataContext);
   const { fire } = useContext(DetailContext);
   const time = useMemo(() => new Date(), []);
@@ -42,6 +42,7 @@ function Middle() {
           placeholder="Search..."
           id="search-input"
           autoComplete="off"
+          onKeyUp={fireSearch}
           onChange={(e) => setSearchValue(e.target.value)}
           value={searchValue}
         />

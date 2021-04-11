@@ -6,7 +6,7 @@ import { SearchContext } from "../Context/SearchContext";
 import { DetailContext } from "../Context/DetailContext";
 
 function Right() {
-  const { searchValue, setSearchValue } = useContext(SearchContext);
+  const { searchValue, setSearchValue, fireSearch } = useContext(SearchContext);
   const [upcoming, setUpcoming] = useState([]);
   const { fire } = useContext(DetailContext);
 
@@ -28,11 +28,6 @@ function Right() {
   const updateValue = useCallback((e) => setSearchValue(e.target.value), [
     setSearchValue,
   ]);
-  const onEnter = useCallback((e) => {
-    if (e.key === "Enter") {
-      console.log("Di tekan");
-    }
-  }, []);
 
   return (
     <section className="web-right">
@@ -42,7 +37,7 @@ function Right() {
           type="text"
           placeholder="Search..."
           onChange={updateValue}
-          onKeyUp={onEnter}
+          onKeyUp={fireSearch}
           autoComplete="off"
           value={searchValue}
         />

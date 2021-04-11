@@ -63,7 +63,10 @@ export default function ModalProvider(props) {
     fetchGeneralData(whatFetch);
   }, [current, GenreData, SeasonData, bindGenreID, fetchGeneralData]);
 
-  const providerValue = useMemo(() => ({ loading, data }), [loading, data]);
+  const providerValue = useMemo(
+    () => ({ loading, setLoading, setData, data }),
+    [loading, setLoading, setData, data]
+  );
 
   return <DataContext.Provider value={providerValue} {...props} />;
 }
