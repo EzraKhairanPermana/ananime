@@ -1,9 +1,9 @@
-import { Modal, Row, Col, Image } from "react-bootstrap";
+import { Modal, Row, Col, Image, Button } from "react-bootstrap";
 import { LoadGif } from "../Util/Image";
 import { useContext } from "react";
 
 import { DetailContext } from "../Context/DetailContext";
-const { Header, Body } = Modal;
+const { Header, Body, Footer } = Modal;
 
 function ModalDetail() {
   const { showModal, hideModal, data, loading } = useContext(DetailContext);
@@ -85,6 +85,11 @@ function ModalDetail() {
           </Row>
         )}
       </Body>
+      <Footer>
+        <Button variant="secondary" onClick={hideModal}>
+          Close
+        </Button>
+      </Footer>
     </Modal>
   );
 }
