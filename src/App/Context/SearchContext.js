@@ -30,7 +30,7 @@ export default function SearchProvider(props) {
         setLoading(false);
       }
     },
-    [searchValue]
+    [searchValue, setData, setLoading]
   );
 
   const providerValue = useMemo(
