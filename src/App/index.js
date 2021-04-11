@@ -1,5 +1,5 @@
 import Provider from "./Context/Provider";
-import { Left, Middle, Right, ModalMessage } from "./Components";
+import { Left, Middle, Right, ModalMessage, ModalDetail } from "./Components";
 
 const App = () => (
   <Provider>
@@ -7,6 +7,7 @@ const App = () => (
     <Middle />
     <Right />
     <ModalMessage />
+    <ModalDetail />
   </Provider>
 );
 

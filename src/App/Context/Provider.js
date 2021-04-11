@@ -6,14 +6,14 @@ import DataProvider from "./DataContext";
 
 export default function Provider({ children }) {
   return (
-    <SearchProvider>
-      <ModalProvider>
-        <CurrentProvider>
-          <DetailProvider>
-            <DataProvider>{children}</DataProvider>
-          </DetailProvider>
-        </CurrentProvider>
-      </ModalProvider>
-    </SearchProvider>
+    <ModalProvider>
+      <CurrentProvider>
+        <SearchProvider>
+          <DataProvider>
+            <DetailProvider>{children}</DetailProvider>
+          </DataProvider>
+        </SearchProvider>
+      </CurrentProvider>
+    </ModalProvider>
   );
 }

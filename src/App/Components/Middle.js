@@ -5,6 +5,7 @@ import { LoadGif } from "../Util/Image";
 import { SearchContext } from "../Context/SearchContext";
 import { CurrentContext } from "../Context/CurrentContext";
 import { DataContext } from "../Context/DataContext";
+import { DetailContext } from "../Context/DetailContext";
 
 function Middle() {
   const {
@@ -13,6 +14,7 @@ function Middle() {
   } = useContext(CurrentContext);
   const { searchValue, setSearchValue } = useContext(SearchContext);
   const { loading, data } = useContext(DataContext);
+  const { fire } = useContext(DetailContext);
   const time = useMemo(() => new Date(), []);
 
   return (
@@ -69,6 +71,7 @@ function Middle() {
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                 }}
+                onClick={() => fire(ani.mal_id)}
               />
               <h3>{ani.title}</h3>
             </Col>

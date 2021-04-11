@@ -3,10 +3,12 @@ import { Row, Col } from "react-bootstrap";
 import Axios from "axios";
 
 import { SearchContext } from "../Context/SearchContext";
+import { DetailContext } from "../Context/DetailContext";
 
 function Right() {
   const { searchValue, setSearchValue } = useContext(SearchContext);
   const [upcoming, setUpcoming] = useState([]);
+  const { fire } = useContext(DetailContext);
 
   const fetchUpcoming = useCallback(async () => {
     const data = await Axios.get(
@@ -60,7 +62,8 @@ function Right() {
                       backgroundPosition: "center",
                       backgroundSize: "cover",
                     }}
-                  ></div>
+                    onClick={() => fire(data.mal_id)}
+                  />
                 </Col>
                 <Col md={8} className="col-6 subdata">
                   <h3>{data.title}</h3>
