@@ -53,7 +53,10 @@ function Right() {
                     className="img-top cursor-right"
                     data-id={data.mal_id}
                     style={{
-                      backgroundImage: `url(${data.image_url})`,
+                      backgroundImage: `url(${data.image_url.replace(
+                        "jpg",
+                        "webp"
+                      )})`,
                       backgroundPosition: "center",
                       backgroundSize: "cover",
                     }}

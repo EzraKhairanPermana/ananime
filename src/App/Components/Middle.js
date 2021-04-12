@@ -68,7 +68,10 @@ function Middle() {
               <div
                 className="img-poster"
                 style={{
-                  backgroundImage: `url(${ani.image_url})`,
+                  backgroundImage: `url(${ani.image_url.replace(
+                    "jpg",
+                    "webp"
+                  )})`,
                   backgroundPosition: "center",
                   backgroundSize: "cover",
                 }}

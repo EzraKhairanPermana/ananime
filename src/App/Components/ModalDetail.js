@@ -21,7 +21,7 @@ function ModalDetail() {
           <Row className="detail-anime">
             <Col md={4} className="text-center">
               <Image
-                src={data.image_url}
+                src={data.image_url.replace("jpg", "webp")}
                 alt={`${data.title} | Banner`}
                 className="img-fluid"
               />
