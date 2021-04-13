@@ -2,14 +2,14 @@
   "files": {
     "static/js/0.adec6762.chunk.js": "/ananime/static/js/0.adec6762.chunk.js",
     "static/js/0.adec6762.chunk.js.map": "/ananime/static/js/0.adec6762.chunk.js.map",
-    "main.css": "/ananime/static/css/main.44fdb2e0.chunk.css",
+    "main.css": "/ananime/static/css/main.74738db2.chunk.css",
     "main.js": "/ananime/static/js/main.0b29b544.chunk.js",
     "main.js.map": "/ananime/static/js/main.0b29b544.chunk.js.map",
     "runtime-main.js": "/ananime/static/js/runtime-main.e13d746f.js",
     "runtime-main.js.map": "/ananime/static/js/runtime-main.e13d746f.js.map",
-    "static/css/3.ef9168ec.chunk.css": "/ananime/static/css/3.ef9168ec.chunk.css",
-    "static/js/3.8a409731.chunk.js": "/ananime/static/js/3.8a409731.chunk.js",
-    "static/js/3.8a409731.chunk.js.map": "/ananime/static/js/3.8a409731.chunk.js.map",
+    "static/css/3.3893e4e4.chunk.css": "/ananime/static/css/3.3893e4e4.chunk.css",
+    "static/js/3.93377316.chunk.js": "/ananime/static/js/3.93377316.chunk.js",
+    "static/js/3.93377316.chunk.js.map": "/ananime/static/js/3.93377316.chunk.js.map",
     "static/js/4.98752fb9.chunk.js": "/ananime/static/js/4.98752fb9.chunk.js",
     "static/js/4.98752fb9.chunk.js.map": "/ananime/static/js/4.98752fb9.chunk.js.map",
     "static/js/5.a8ed423f.chunk.js": "/ananime/static/js/5.a8ed423f.chunk.js",
@@ -19,17 +19,17 @@
     "static/js/7.c752d38e.chunk.js": "/ananime/static/js/7.c752d38e.chunk.js",
     "static/js/7.c752d38e.chunk.js.map": "/ananime/static/js/7.c752d38e.chunk.js.map",
     "index.html": "/ananime/index.html",
-    "static/css/3.ef9168ec.chunk.css.map": "/ananime/static/css/3.ef9168ec.chunk.css.map",
-    "static/css/main.44fdb2e0.chunk.css.map": "/ananime/static/css/main.44fdb2e0.chunk.css.map",
-    "static/js/3.8a409731.chunk.js.LICENSE.txt": "/ananime/static/js/3.8a409731.chunk.js.LICENSE.txt",
+    "static/css/3.3893e4e4.chunk.css.map": "/ananime/static/css/3.3893e4e4.chunk.css.map",
+    "static/css/main.74738db2.chunk.css.map": "/ananime/static/css/main.74738db2.chunk.css.map",
+    "static/js/3.93377316.chunk.js.LICENSE.txt": "/ananime/static/js/3.93377316.chunk.js.LICENSE.txt",
     "static/media/arrow-right.4b2d311c.svg": "/ananime/static/media/arrow-right.4b2d311c.svg",
     "static/media/index.css": "/ananime/static/media/rr.37a4d906.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.e13d746f.js",
-    "static/css/3.ef9168ec.chunk.css",
-    "static/js/3.8a409731.chunk.js",
-    "static/css/main.44fdb2e0.chunk.css",
+    "static/css/3.3893e4e4.chunk.css",
+    "static/js/3.93377316.chunk.js",
+    "static/css/main.74738db2.chunk.css",
     "static/js/main.0b29b544.chunk.js"
   ]
 }
