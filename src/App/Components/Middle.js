@@ -4,7 +4,7 @@ import { SearchContext } from "../Context/SearchContext";
 import { CurrentContext } from "../Context/CurrentContext";
 import { DataContext } from "../Context/DataContext";
 import { DetailContext } from "../Context/DetailContext";
-import { BoxInput, Content, Season } from "./Children/MiddleChildren";
+import { BoxInput, Content, Season } from "./Children/MiddleChild";
 
 function Middle() {
   const {

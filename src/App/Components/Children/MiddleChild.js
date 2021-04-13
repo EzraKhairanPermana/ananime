@@ -5,22 +5,25 @@ import { Row, Col } from "react-bootstrap";
 const commonComprator = (prevProps, nextProps) =>
   JSON.stringify(prevProps) === JSON.stringify(nextProps);
 
-const BoxInput = memo(({ fireSearch, searchValue, setSearchValue }) => {
-  return (
-    <div className="box-input" id="input-mobile">
-      <h2>Find Anime</h2>
-      <input
-        type="text"
-        placeholder="Search..."
-        id="search-input"
-        autoComplete="off"
-        onKeyUp={fireSearch}
-        onChange={(e) => setSearchValue(e.target.value)}
-        value={searchValue}
-      />
-    </div>
-  );
-}, commonComprator);
+const BoxInput = memo(
+  ({ fireSearch, searchValue, setSearchValue }) => {
+    return (
+      <div className="box-input" id="input-mobile">
+        <h2>Find Anime</h2>
+        <input
+          type="text"
+          placeholder="Search..."
+          id="search-input"
+          autoComplete="off"
+          onKeyUp={fireSearch}
+          onChange={(e) => setSearchValue(e.target.value)}
+          value={searchValue}
+        />
+      </div>
+    );
+  },
+  (prevProps, nextProps) => prevProps.searchValue === nextProps.searchValue
+);
 
 const Content = memo(
   ({ loading, data, fire }) => (
