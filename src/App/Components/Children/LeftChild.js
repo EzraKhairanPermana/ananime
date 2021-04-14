@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useCallback, memo } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 
 import { ModalContext } from "../../Context/ModalContext";
@@ -13,7 +13,7 @@ const ImbData = [
   { href: "https://www.instagram.com/kunoleps", img: kunoleps },
 ];
 
-const ImageBrand = () => (
+const ImageBrand = memo(() => (
   <Row className="img-brand">
     {ImbData.map((e, i) => (
       <Col md="4" className="col-6 text-center" key={i}>
@@ -23,9 +23,9 @@ const ImageBrand = () => (
       </Col>
     ))}
   </Row>
-);
+));
 
-function Gendre() {
+const Gendre = memo(() => {
   const { showModal, setShowModal } = useContext(ModalContext);
   const {
     GenreData,
@@ -34,33 +34,61 @@ function Gendre() {
 
   return (
     <Row className="gendre">
-      <Col md="12">
-        <h2>Top Gendre</h2>
-      </Col>
-      {GenreData.map((e, i) => (
-        <Col md="12" className="col-6" key={i}>
-          <span
-            className={`btn-gendre ${current === e ? "btn-gendre-active" : ""}`}
-            onClick={() => setCurrent(e)}
-          >
-            {e}
-          </span>
-        </Col>
-      ))}
-      <Col className="col-12">
-        <a
-          href="/"
-          className="btn-thx"
-          onClick={(e) => {
-            e.preventDefault();
-            setShowModal(!showModal);
-          }}
-        >
-          <Image src={ArrowRight} className="img-fluid" />
-        </a>
-      </Col>
+      <Title />
+      <GendreLists
+        GenreData={GenreData}
+        setCurrent={setCurrent}
+        current={current}
+      />
+      <ButtonThx showModal={showModal} setShowModal={setShowModal} />
     </Row>
   );
-}
+});
+
+const GendreLists = memo(
+  ({ GenreData, setCurrent, current }) =>
+    GenreData.map((e, i) => (
+      <Col md="12" className="col-6" key={i}>
+        <span
+          className={`btn-gendre ${current === e ? "btn-gendre-active" : ""}`}
+          onClick={() => setCurrent(e)}
+        >
+          {e}
+        </span>
+      </Col>
+    )),
+  (prevProps, nextProps) => prevProps.current === nextProps.current
+);
+
+const Title = memo(() => (
+  <Col md="12">
+    <h2>Top Gendre</h2>
+  </Col>
+));
+
+const ButtonThx = memo(
+  ({ setShowModal, showModal }) => (
+    <Col className="col-12">
+      <a
+        href="/"
+        className="btn-thx"
+        onClick={useCallback(
+          (e) => {
+            e.preventDefault();
+            setShowModal(!showModal);
+          },
+          [setShowModal, showModal]
+        )}
+      >
+        <ImageArrow />
+      </a>
+    </Col>
+  ),
+  (prevProps, nextProps) => prevProps.showModal === nextProps.showModal
+);
+
+const ImageArrow = memo(() => (
+  <Image src={ArrowRight} className="img-fluid" alt="Terimakasih :)" />
+));
 
 export { ImageBrand, Gendre };
